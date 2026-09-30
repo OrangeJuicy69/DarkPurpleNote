@@ -1,45 +1,95 @@
 import './basicnode.css'
 
+const FALLBACK_WIDTH = 140
+const FALLBACK_HEIGHT = 70
+const CURVATURE = 0.25 // wie bei ReactFlow; höher = stärker gebogen
 
+// Wandelt eine Seiten-Zahl (1-4) in einen festen Punkt auf dem Rand der Box um
+const sidePoint = (cx, cy, halfW, halfH, side) => {
+    switch (side) {
+        case 1: return { x: cx - halfW, y: cy } // links Mitte
+        case 2: return { x: cx + halfW, y: cy } // rechts Mitte
+        case 3: return { x: cx, y: cy - halfH } // oben Mitte
+        case 4: return { x: cx, y: cy + halfH } // unten Mitte
+        default: return { x: cx, y: cy }
+    }
+}
 
-const NODE_WIDTH = 140
-const NODE_HEIGHT = 70
+// Gleiche Logik wie in ReactFlow (calculateControlOffset)
+const controlOffset = (distance) =>
+    distance >= 0
+        ? 0.5 * distance
+        : CURVATURE * 25 * Math.sqrt(-distance)
 
-export const Connections = ({ nodes }) => {
-    
+// Kontrollpunkt liegt in Richtung der Seite, an der die Linie angeschlossen ist
+const controlPoint = (point, side, target) => {
+    switch (side) {
+        case 1: return { x: point.x - controlOffset(point.x - target.x), y: point.y }
+        case 2: return { x: point.x + controlOffset(target.x - point.x), y: point.y }
+        case 3: return { x: point.x, y: point.y - controlOffset(point.y - target.y) }
+        case 4: return { x: point.x, y: point.y + controlOffset(target.y - point.y) }
+        default: return point
+    }
+}
+
+export const Connections = ({ nodes, sizes }) => {
     const byId = Object.fromEntries(nodes.map((n) => [n.id, n]))
 
-    const lines = []
+    const getSize = (id) => sizes[id] || { width: FALLBACK_WIDTH, height: FALLBACK_HEIGHT }
+
+    const paths = []
 
     nodes.forEach((node) => {
-        node.voraussetzungen.forEach((reqId) => {
-            const from = byId[reqId]
-            if (!from) return 
+        const anschlussListe = node.anschluss || []
 
-            const x1 = from.position.x + NODE_WIDTH / 2
-            const y1 = from.position.y + NODE_HEIGHT / 2
-            const x2 = node.position.x + NODE_WIDTH / 2
-            const y2 = node.position.y + NODE_HEIGHT / 2
+        anschlussListe.forEach((verbindung, i) => {
+            const other = byId[verbindung.zu]
+            if (!other) return
 
-            const dx = x2 - x1
-            const dy = y2 - y1
-            const length = Math.sqrt(dx * dx + dy * dy)
-            const angle = Math.atan2(dy, dx) * (180 / Math.PI)
+            const sizeMine = getSize(node.id)
+            const sizeOther = getSize(other.id)
 
-            lines.push(
-                <div
-                    key={`${reqId}-${node.id}`}
-                    className="connection-line"
-                    style={{
-                        left: x1,
-                        top: y1,
-                        width: length,
-                        transform: `rotate(${angle}deg)`,
-                    }}
+            const cxMine = node.position.x + sizeMine.width / 2
+            const cyMine = node.position.y + sizeMine.height / 2
+            const cxOther = other.position.x + sizeOther.width / 2
+            const cyOther = other.position.y + sizeOther.height / 2
+
+            const start = sidePoint(cxMine, cyMine, sizeMine.width / 2, sizeMine.height / 2, verbindung.meineSeite)
+            const end = sidePoint(cxOther, cyOther, sizeOther.width / 2, sizeOther.height / 2, verbindung.andereSeite)
+
+            const c1 = controlPoint(start, verbindung.meineSeite, end)
+            const c2 = controlPoint(end, verbindung.andereSeite, start)
+
+            const d = `M ${start.x},${start.y} C ${c1.x},${c1.y} ${c2.x},${c2.y} ${end.x},${end.y}`
+
+            paths.push(
+                <path
+                    key={`${node.id}-${verbindung.zu}-${i}`}
+                    className="connection-path"
+                    d={d}
+                    fill="none"
+                    stroke="#b1b1b7"
+                    strokeWidth={2}
                 />
             )
         })
     })
 
-    return <div className="connections-layer">{lines}</div>
+    return (
+        <div className="connections-layer">
+            <svg
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: 1,
+                    height: 1,
+                    overflow: 'visible',
+                    pointerEvents: 'none',
+                }}
+            >
+                {paths}
+            </svg>
+        </div>
+    )
 }

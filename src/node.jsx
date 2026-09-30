@@ -1,16 +1,16 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './basicnode.css'
 
 const statusColors = {
   gesperrt: '#A32D2D',
   offen: '#BA7517',
-  'in Arbeit': '#BA7517',
+  'in Arbeit': '#1727ba',
   abgenommen: '#1D9E75',
 };
 
 const DRAG_THRESHOLD = 4;
 
-export const Node = ({ data, isSelected, onMove, onSelect }) => {
+export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [position, setPosition] = useState(data.position || { x: 100, y: 100 });
     const [isDragging, setIsDragging] = useState(false);
@@ -19,6 +19,20 @@ export const Node = ({ data, isSelected, onMove, onSelect }) => {
         startX: 0, startY: 0, originX: 0, originY: 0,
         lastX: 0, lastY: 0, moved: false,
     });
+    const nodeRef = useRef(null);
+
+    useEffect(() => {
+        const el = nodeRef.current;
+        if (!el) return;
+
+        const observer = new ResizeObserver(() => {
+            const { offsetWidth, offsetHeight } = el;
+            onResize(data.id, { width: offsetWidth, height: offsetHeight });
+        });
+        observer.observe(el);
+
+        return () => observer.disconnect();
+    }, [data.id]);
 
     const handlePointerDown = (e) => {
         dragInfo.current = {
@@ -48,20 +62,16 @@ export const Node = ({ data, isSelected, onMove, onSelect }) => {
         dragInfo.current.lastX = x;
         dragInfo.current.lastY = y;
         setPosition({ x, y });
+        onMove(data.id, { x, y });
     };
 
     const handlePointerUp = () => {
         setIsDragging(false);
         window.removeEventListener('pointermove', handlePointerMove);
         window.removeEventListener('pointerup', handlePointerUp);
-
-        
-        if (dragInfo.current.moved) {
-            onMove(data.id, { x: dragInfo.current.lastX, y: dragInfo.current.lastY });
-        }
     };
 
-        const handleBodyClick = () => {
+    const handleBodyClick = () => {
         if (dragInfo.current.moved) return;
         if (data.status === 'gesperrt') return;
         onSelect(data.id);
@@ -75,7 +85,8 @@ export const Node = ({ data, isSelected, onMove, onSelect }) => {
 
     return (
         <div
-            className={`node-div${isOpen ? ' open' : ''}${isDragging ? ' dragging' : ''}${isSelected ? ' selected' : ''}`}
+            ref={nodeRef}
+            className={`node-div${isOpen ? ' open' : ''}${isDragging ? ' dragging' : ''}${isSelected ? ' selected' : ''}${data.status === 'gesperrt' ? ' locked' : ''}`}
             style={{ left: position.x, top: position.y }}
             onPointerDown={handlePointerDown}
             onClick={handleBodyClick}

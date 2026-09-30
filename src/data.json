@@ -1,61 +1,141 @@
 [
   {
     "id": "n1",
-    "title": "Grundlagen HTML",
+    "title": "Platzhalter Node 1",
     "stufe": 1,
     "voraussetzungen": [],
-    "ziel": "Ich kann eine einfache HTML-Seite strukturieren.",
-    "deliverable": "Eine HTML-Datei mit Kopf-, Haupt- und Fussbereich.",
-    "abnahme": ["Seite validiert ohne Fehler", "Mindestens 3 Sektionen", "Semantische Tags verwendet"],
-    "nachweis": { "commit": "https://github.com/user/repo/commit/abc123", "datum": "2026-09-20" },
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "nachweis": { "commit": "", "datum": "" },
     "status": "abgenommen",
-    "reflexion": "Schwer war das Verständnis von semantischen Tags. Geholfen hat ein Beispielprojekt.",
-    "bildungsplan": "c",
-    "position": { "x": 100, "y": 100 }
+    "reflexion": "Platzhaltertext für Reflexion.",
+    "bildungsplan": "a",
+    "position": { "x": 80, "y": 100 },
+    "anschluss": []
   },
   {
     "id": "n2",
-    "title": "CSS Grundlagen",
+    "title": "Platzhalter Node 2",
     "stufe": 2,
     "voraussetzungen": ["n1"],
-    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
-    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
-    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
     "nachweis": { "commit": "", "datum": "" },
     "status": "offen",
     "reflexion": "",
-    "bildungsplan": "c",
-    "position": { "x": 350, "y": 100 }
+    "bildungsplan": "b",
+    "position": { "x": 350, "y": 100 },
+    "anschluss": [
+      { "zu": "n1", "meineSeite": 1, "andereSeite": 2 }
+    ]
   },
-
   {
     "id": "n3",
-    "title": "Test-node",
+    "title": "Platzhalter Node 3",
     "stufe": 2,
-    "voraussetzungen": ["n2"],
-    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
-    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
-    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "voraussetzungen": ["n1"],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
     "nachweis": { "commit": "", "datum": "" },
-    "status": "offen",
-    "reflexion": "",
+    "status": "in Arbeit",
+    "reflexion": "Platzhaltertext für Reflexion.",
     "bildungsplan": "c",
-    "position": { "x": 320, "y": 300 }
+    "position": { "x": 85, "y": 500 },
+    "anschluss": [
+      { "zu": "n1", "meineSeite": 3, "andereSeite": 4 }
+    ]
   },
-
- {
+  {
     "id": "n4",
-    "title": "Test2",
-    "stufe": 2,
-    "voraussetzungen": ["n3", "n2"],
-    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
-    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
-    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "title": "Platzhalter Node 4",
+    "stufe": 3,
+    "voraussetzungen": ["n2", "n3"],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
     "nachweis": { "commit": "", "datum": "" },
     "status": "gesperrt",
     "reflexion": "",
-    "bildungsplan": "c",
-    "position": { "x": 650, "y": 100 }
+    "bildungsplan": "d",
+    "position": { "x": 500, "y": 500 },
+    "anschluss": [
+      { "zu": "n2", "meineSeite": 1, "andereSeite": 4 },
+      { "zu": "n3", "meineSeite": 1, "andereSeite": 2 },
+      { "zu": "n8", "meineSeite": 2, "andereSeite": 4 }
+    ]
+  },
+  {
+    "id": "n5",
+    "title": "Platzhalter Node 5",
+    "stufe": 1,
+    "voraussetzungen": [],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "abgenommen",
+    "reflexion": "Platzhaltertext für Reflexion.",
+    "bildungsplan": "e",
+    "position": { "x": 800, "y": 100 },
+    "anschluss": [
+      { "zu": "n2", "meineSeite": 1, "andereSeite": 2 }
+    ]
+  },
+
+  {
+    "id": "n6",
+    "title": "Platzhalter Node 6",
+    "stufe": 1,
+    "voraussetzungen": [],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "in Arbeit",
+    "reflexion": "Platzhaltertext für Reflexion.",
+    "bildungsplan": "e",
+    "position": { "x": 800, "y": 200 },
+    "anschluss": [
+      { "zu": "n2", "meineSeite": 1, "andereSeite": 2 }
+    ]
+  },
+
+  {
+    "id": "n7",
+    "title": "Platzhalter Node 7",
+    "stufe": 1,
+    "voraussetzungen": [],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "abgenommen",
+    "reflexion": "Platzhaltertext für Reflexion.",
+    "bildungsplan": "e",
+    "position": { "x": 800, "y": 300 },
+    "anschluss": [
+      { "zu": "n2", "meineSeite": 1, "andereSeite": 2 }
+    ]
+  },
+  {
+    "id": "n8",
+    "title": "Platzhalter Node 8",
+    "stufe": 1,
+    "voraussetzungen": [],
+    "ziel": "Platzhaltertext für Ziel.",
+    "deliverable": "Platzhaltertext für Deliverable.",
+    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "abgenommen",
+    "reflexion": "Platzhaltertext für Reflexion.",
+    "bildungsplan": "e",
+    "position": { "x": 800, "y": 400 },
+    "anschluss": [
+      { "zu": "n2", "meineSeite": 1, "andereSeite": 2 },
+      { "zu": "n1", "meineSeite": 1, "andereSeite": 4 }
+    ]
   }
-  
 ]
