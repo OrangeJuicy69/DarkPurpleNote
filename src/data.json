@@ -26,7 +26,36 @@
     "reflexion": "",
     "bildungsplan": "c",
     "position": { "x": 350, "y": 100 }
+  },
+
+  {
+    "id": "n3",
+    "title": "Test-node",
+    "stufe": 2,
+    "voraussetzungen": ["n2"],
+    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
+    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
+    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "offen",
+    "reflexion": "",
+    "bildungsplan": "c",
+    "position": { "x": 320, "y": 300 }
+  },
+
+ {
+    "id": "n4",
+    "title": "Test2",
+    "stufe": 2,
+    "voraussetzungen": ["n3", "n2"],
+    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
+    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
+    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "",
+    "bildungsplan": "c",
+    "position": { "x": 650, "y": 100 }
   }
- 
   
 ]

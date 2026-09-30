@@ -146,7 +146,7 @@
   text-decoration: underline;
 }
 
-/* Seitenpanel */
+
 .node-sidepanel {
   position: fixed;
   
@@ -229,7 +229,7 @@ li {
 
 .node-div.selected {
      box-shadow: 0 0 0 3px #2A835F;
-   }
+}
 
 .connections-layer {
   position: absolute;
@@ -241,9 +241,19 @@ li {
   z-index: 1;
 }
 
+
 .connection-line {
   position: absolute;
   height: 2px;
   background-color: #12544F;
   transform-origin: left center;
+}
+
+.node-div.locked .node-pad,
+.node-div.locked .node-chevron {
+  cursor: not-allowed;
+}
+
+.node-div.locked {
+  opacity: 0.85;
 }

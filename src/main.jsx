@@ -5,6 +5,7 @@ import { Node } from './node.jsx'
 import { NewNode } from './newnode.jsx'
 import { Sidepanel } from './sidepanel.jsx'
 import nodes from './data.json'
+import { Connections } from './connections.jsx'
 
 const App = () => {
   const [nodeList, setNodeList] = useState(nodes)
@@ -18,13 +19,14 @@ const App = () => {
     )
   }
 
-  // Klick auf den ausgewählten Node schließt das Panel, Klick auf einen anderen wechselt
+  
   const handleSelect = (id) => {
     setSelectedId((prev) => (prev === id ? null : id))
   }
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      <Connections nodes={nodeList} />
       {nodeList.map((node) => (
         <Node
           key={node.id}

@@ -1,8 +1,12 @@
 import './basicnode.css'
 
 export const NewNode = () => {
+    function handleClick() {
+        alert('In bearbeitung')
+    }
+
     return (
-        <div id='new-node'>
+        <div id='new-node' onClick={handleClick}>
             <svg
                 viewBox="0 0 24 24"
                 fill="none"

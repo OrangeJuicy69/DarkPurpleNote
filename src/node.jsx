@@ -55,19 +55,21 @@ export const Node = ({ data, isSelected, onMove, onSelect }) => {
         window.removeEventListener('pointermove', handlePointerMove);
         window.removeEventListener('pointerup', handlePointerUp);
 
-        // Endposition erst beim Loslassen nach oben melden
+        
         if (dragInfo.current.moved) {
             onMove(data.id, { x: dragInfo.current.lastX, y: dragInfo.current.lastY });
         }
     };
 
-    const handleBodyClick = () => {
+        const handleBodyClick = () => {
         if (dragInfo.current.moved) return;
+        if (data.status === 'gesperrt') return;
         onSelect(data.id);
     };
 
     const handleChevronClick = (e) => {
         e.stopPropagation();
+        if (data.status === 'gesperrt') return;
         setIsOpen(!isOpen);
     };
 
