@@ -1,0 +1,32 @@
+[
+  {
+    "id": "n1",
+    "title": "Grundlagen HTML",
+    "stufe": 1,
+    "voraussetzungen": [],
+    "ziel": "Ich kann eine einfache HTML-Seite strukturieren.",
+    "deliverable": "Eine HTML-Datei mit Kopf-, Haupt- und Fussbereich.",
+    "abnahme": ["Seite validiert ohne Fehler", "Mindestens 3 Sektionen", "Semantische Tags verwendet"],
+    "nachweis": { "commit": "https://github.com/user/repo/commit/abc123", "datum": "2026-09-20" },
+    "status": "abgenommen",
+    "reflexion": "Schwer war das Verständnis von semantischen Tags. Geholfen hat ein Beispielprojekt.",
+    "bildungsplan": "c",
+    "position": { "x": 100, "y": 100 }
+  },
+  {
+    "id": "n2",
+    "title": "CSS Grundlagen",
+    "stufe": 2,
+    "voraussetzungen": ["n1"],
+    "ziel": "Ich kann Elemente mit CSS gestalten und positionieren.",
+    "deliverable": "Eine gestylte HTML-Seite mit eigenem Stylesheet.",
+    "abnahme": ["Farben und Layout gesetzt", "Responsive auf 2 Breakpoints"],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "offen",
+    "reflexion": "",
+    "bildungsplan": "c",
+    "position": { "x": 350, "y": 100 }
+  }
+ 
+  
+]
