@@ -15,7 +15,7 @@ Benutzung:
     Position, Voraussetzungen und Status muss man auch manuel eintragen im Json.
 
 
-Wo, wie?
+Wo?
 
     Im "node.jsx" werden alle funktionen des Nodes bestummen.
 
@@ -25,7 +25,10 @@ Wo, wie?
 
     Das "index.css" ist für das Globale Styling wärend das "basicnode.css" nur für das Node System verantwortlich ist
 
+Wie?
+    Es muss der Packitmanager Instaliert sein um dan damit eine LocalHost zu starten
 
+    npm run dev
 
 
 
