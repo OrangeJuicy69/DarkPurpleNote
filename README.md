@@ -37,6 +37,7 @@ Wie?
 
     npm run dev
 
-
+###
+Im Projekt kann man jetzt "Export JSON" drücken um das aktuele Json runter zu laden
 
 
