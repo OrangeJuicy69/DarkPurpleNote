@@ -6,6 +6,7 @@ import { NewNode } from './newnode.jsx'
 import { Sidepanel } from './sidepanel.jsx'
 import { Connections } from './connections.jsx'
 import nodes from './data.json'
+import { ExportJSON } from './export-json.jsx'
 
 const App = () => {
   const [nodeList, setNodeList] = useState(nodes)
@@ -43,6 +44,8 @@ const App = () => {
         />
       ))}
       <NewNode />
+      <ExportJSON/>
+      <ExportJSON nodeList={nodeList} />
       <Sidepanel node={selectedNode} onClose={() => setSelectedId(null)} />
     </div>
   )

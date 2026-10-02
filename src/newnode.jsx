@@ -3,7 +3,7 @@ import "./basicnode.css";
 
 export const NewNode = () => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
+  const [ setSelected] = useState(null);
 
   const options = ["Start Node", "Node", "End Node"];
 

@@ -279,6 +279,17 @@ li {
   position: relative;
   margin-top: 88vh;
   gap: 5px;
+  animation: fade-in 0.5s ease-out;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button {
@@ -288,10 +299,27 @@ button {
   border-style: solid;
   border-color: #0d3d3a;
   border-radius: 5px;
-
+  transition-duration: 500ms;
 }
 
 button:hover {
   background-color: #0d3d3a;
+  transform: scale(1.10);
+}
+
+.export-json-container {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+}
+
+#export-json {
+  background-color: #2A835F;
+  border: 3px solid #12544F;
   color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }

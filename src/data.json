@@ -68,7 +68,7 @@
     "status": "gesperrt",
     "reflexion": "",
     "bildungsplan": "d",
-    "position": { "x": 600, "y": 500 },
+    "position": { "x": 800, "y": 350 },
     "anschluss": [
       { "zu": "n2", "meineSeite": 1, "andereSeite": 4 },
       { "zu": "n3", "meineSeite": 1, "andereSeite": 2 },
