@@ -24,7 +24,14 @@ Wo?
     Im "main.jsx" wird ales zusammen gefügt und dan ans "index.html geschickt"
 
     Das "index.css" ist für das Globale Styling wärend das "basicnode.css" nur für das Node System verantwortlich ist
+Status und Kategoerie
 
+    Im Json kann man den Staus der Nodes änder zwischen "gesperrt, offen, in Arbeit, abgenommen"
+
+
+    Das gleiche geht für die symbole neben dem Title
+        : Coding, ui, server, school, Course
+        
 Wie?
     Es muss der Packitmanager Instaliert sein um dan damit eine LocalHost zu starten
 

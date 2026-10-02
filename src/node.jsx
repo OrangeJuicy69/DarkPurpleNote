@@ -7,7 +7,26 @@ const statusColors = {
   'in Arbeit': '#1727ba',
   abgenommen: '#1D9E75',
 };
-
+const categoryIcons = {
+  coding: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <path d="M8 4L2 12l6 8M16 4l6 8-6 8" />
+    </svg>
+  ),
+  ui: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M3 9h18" />
+    </svg>
+  ),
+  server: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <rect x="4" y="3" width="16" height="6" rx="1" />
+      <rect x="4" y="15" width="16" height="6" rx="1" />
+      <path d="M8 6h.01M8 18h.01" />
+    </svg>
+  ),
+};
 const DRAG_THRESHOLD = 4;
 
 export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
@@ -92,6 +111,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
             onClick={handleBodyClick}
         >
             <div className="node-pad">
+                <span className="node-icon">{categoryIcons[data.kategorie]}</span>
                 <span>{data.title}</span>
                 <div className="node-status-dot" style={{ backgroundColor: statusColors[data.status] }} />
                 <svg
@@ -108,6 +128,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
 
             {!isOpen && (
                 <div className="node-basic">
+                    <div className='node-bs'>{data.shortver}</div>
                     <div className="node-stufe-badge">Stufe {data.stufe}</div>
                 </div>
             )}

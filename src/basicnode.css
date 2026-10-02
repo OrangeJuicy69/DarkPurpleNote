@@ -4,18 +4,18 @@
   background-color: #8BBB92;
   border: 3px solid #12544F;
   text-align: center;
-  border-radius: 1vh;
+  border-radius: 1.5vh;
   cursor: grab;
   overflow: hidden;
   user-select: none;
 
-  --pad-x: 16px;
-  --pad-y: 10px;
+  --pad-x: 26px;
+  --pad-y: 4vh;
   padding: var(--pad-y) var(--pad-x);
   min-width: 120px;
   max-width: 160px;
   transition: padding 0.3s ease, min-width 0.3s ease, max-width 0.3s ease;
-  
+
 }
 
 .node-div.dragging {
@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  
+
   transition: font-size 0.3s ease;
 }
 
@@ -83,7 +83,7 @@
   background-color: #12544F;
   color: #fff;
   border-radius: 4px;
-  padding: 1px 6px;
+  padding: 2px 6px;
 }
 
 .node-detail-wrapper {
@@ -149,7 +149,7 @@
 
 .node-sidepanel {
   position: fixed;
-  
+
   top: 0;
   right: 0;
   height: 100vh;
@@ -181,7 +181,7 @@
 }
 
 .node-sidepanel-title {
-  
+
   font-size: 2vh;
   font-weight: 700;
   color: #12544F;
@@ -228,7 +228,7 @@ li {
 }
 
 .node-div.selected {
-     box-shadow: 0 0 0 3px #2A835F;
+  box-shadow: 0 0 0 3px #2A835F;
 }
 
 .connections-layer {
@@ -256,4 +256,42 @@ li {
 
 .node-div.locked {
   opacity: 0.85;
+}
+
+.node-icon svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.node-bs {
+  color: #fff;
+  margin: 5px;
+}
+
+.new-node-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-node-wrapper {
+  position: relative;
+  margin-top: 88vh;
+  gap: 5px;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  background-color: #8BBB92;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #0d3d3a;
+  border-radius: 5px;
+
+}
+
+button:hover {
+  background-color: #0d3d3a;
+  color: #fff;
 }
