@@ -24,7 +24,7 @@ const App = () => {
     setSizes((prev) => ({ ...prev, [id]: size }))
   }
 
-  // Klick auf den ausgewählten Node schließt das Panel, Klick auf einen anderen wechselt
+  
   const handleSelect = (id) => {
     setSelectedId((prev) => (prev === id ? null : id))
   }
