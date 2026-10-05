@@ -9,6 +9,8 @@ export const ExportJSON = ({ nodeList = [] }) => {
     const link = document.createElement("a");
     link.href = url;
     link.download = "data.json";
+    console.info ("JSON now on your PC")
+    console.info ("If do dont see a JSON file, check *export-json.jsx* for debugin")
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

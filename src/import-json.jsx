@@ -16,6 +16,7 @@ export const ImportJSON = ({ onImport }) => {
     } catch (err) {
       console.error("JSON-Parse-Fehler:", err);
       alert("Die Datei ist kein gültiges JSON.");
+      console.error("check *import-json.jsx* if the JSON dont work")
       return;
     }
 
@@ -26,6 +27,7 @@ export const ImportJSON = ({ onImport }) => {
 
     if (typeof onImport !== "function") {
       console.error("ImportJSON: Prop onImport fehlt.");
+      
       return;
     }
 
