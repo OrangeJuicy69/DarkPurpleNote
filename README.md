@@ -14,6 +14,29 @@ Benutzung:
     Für neue Nodes, einfach ein neuen Abschnit im "data.json"
     Position, Voraussetzungen und Status muss man auch manuel eintragen im Json.
 
+Aufbau des JSON (Vorlage)
+
+       {
+    "id": "",
+    "title": "",
+    "kategorie": "",
+    "stufe": 2,
+    "shortver":"",
+    "voraussetzungen": [""],
+    "ziel": "",
+    "deliverable": "",
+    "abnahme": [""],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 350, "y": 100 },
+    "anschluss": [
+      { "zu": "", "": 1, "": 2 }
+    ]
+  } 
+
+
 
 Wo?
 
@@ -24,13 +47,19 @@ Wo?
     Im "main.jsx" wird ales zusammen gefügt und dan ans "index.html geschickt"
 
     Das "index.css" ist für das Globale Styling wärend das "basicnode.css" nur für das Node System verantwortlich ist
-Status und Kategoerie
+Status, Kategoerie und verbinungen
 
     Im Json kann man den Staus der Nodes änder zwischen "gesperrt, offen, in Arbeit, abgenommen"
 
 
     Das gleiche geht für die symbole neben dem Title
         : Coding, ui, server, school, Course
+
+    Im JSON unter *anschluss* kann man sagen zu welchen node man sich verbinden will und auf welcher der 4 seiten es ausgehen soll und wo es ankommen soll
+    beispiel:
+        "anschluss": [
+      { "zu": "n1", "meineSeite": 1, "andereSeite": 2 }
+      ]
         
 Wie?
     Es muss der Packitmanager Instaliert sein um dan damit eine LocalHost zu starten
