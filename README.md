@@ -34,7 +34,7 @@ Aufbau des JSON (Vorlage)
     "anschluss": [
       { "zu": "", "": 1, "": 2 }
     ]
-  } 
+    } 
 
 
 
