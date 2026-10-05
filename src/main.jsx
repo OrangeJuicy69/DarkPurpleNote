@@ -7,6 +7,9 @@ import { Sidepanel } from './sidepanel.jsx'
 import { Connections } from './connections.jsx'
 import nodes from './data.json'
 import { ExportJSON } from './export-json.jsx'
+import { ImportJSON } from './import-json.jsx'
+
+
 
 const App = () => {
   const [nodeList, setNodeList] = useState(nodes)
@@ -25,7 +28,7 @@ const App = () => {
     setSizes((prev) => ({ ...prev, [id]: size }))
   }
 
-  
+
   const handleSelect = (id) => {
     setSelectedId((prev) => (prev === id ? null : id))
   }
@@ -44,9 +47,11 @@ const App = () => {
         />
       ))}
       <NewNode />
-      <ExportJSON/>
+      <ExportJSON />
       <ExportJSON nodeList={nodeList} />
       <Sidepanel node={selectedNode} onClose={() => setSelectedId(null)} />
+
+      <ImportJSON onImport={(importedNodes) => setNodeList(importedNodes)} />
     </div>
   )
 }
