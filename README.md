@@ -38,6 +38,7 @@ Wie?
     npm run dev
 
 ###
-Im Projekt kann man jetzt "Export JSON" drücken um das aktuele Json runter zu laden
+Im Projekt kann man jetzt "Export JSON" drücken um das aktuele Json runter zu laden. 
+Für ein Temopräses benutzung kann man jetzt auch JSON Importieren. (zu beachten ist das nur JSON hochgeladen werden können die die Anforderungen Entsprechen für ein volles Node)
 
 
