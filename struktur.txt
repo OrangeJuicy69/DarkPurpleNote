@@ -1,0 +1,29 @@
+.
+├── eslint.config.js
+├── .gitignore
+├── index.html
+├── JsonSetup
+│   └── JsonSetup.md
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── favicon.svg
+│   └── icons.svg
+├── README.md
+├── src
+│   ├── assets
+│   │   └── vite.svg
+│   ├── basicnode.css
+│   ├── connections.jsx
+│   ├── data.json
+│   ├── export-json.jsx
+│   ├── import-json.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   ├── newnode.jsx
+│   ├── node.jsx
+│   └── sidepanel.jsx
+├── struktur.txt
+└── vite.config.js
+
+5 directories, 22 files

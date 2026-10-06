@@ -1,70 +1,175 @@
-DarkPurpleNote
+# DarkPurpleNote
 
-Entwickelt von Orange_juicy69
+Entwickelt von [OrangeJuicy69](https://github.com/OrangeJuicy69)
 
-Eigende Notiz App für erfolge eines Abgeschlossenens Projekt zu Dokumentatiren
+Eine eigene Notiz-App, um die Erfolge eines abgeschlossenen Projekts zu dokumentieren. Die Notizen werden als Nodes (Knoten) dargestellt, die über Linien miteinander verbunden sind.
 
+> [!NOTE]
+> Diese Webapp ist noch in Bearbeitung. Fehler und Bugs sind zu erwarten.
 
+> [!TIP]
+> Lies die Installationsanleitung genau durch, um Fehler zu vermeiden.
 
-Benutzung:
-    Alle Daten zu den Nodes findet man im "data.json".
-    <br>
-    Alle Texte die im Node steht findet man auch im Json.
-    <br>
-    Für neue Nodes, einfach ein neuen Abschnit im "data.json"
-    <br>
-    Position, Voraussetzungen und Status muss man auch manuel eintragen im Json.
+> [!IMPORTANT]
+> Das Projekt darf als Vorlage für eigene Projekte verwendet werden.
 
-Aufbau und Aleintung zum Json findem man im Ordner JsonSetup, dort drin ist ein Datei die JsonSetup.md heisst und alle Infos zum Json hat
+> [!WARNING]
+> Bei Verwendung bitte **OrangeJuicy69** verlinken.
 
+## Inhalt
 
-Wo?
-    Im "node.jsx" sind alle Funktionen von den Nodes.
-    <br>
-    Im "sidepanel.jsx" wird das Sidepanel des Nodes Verwaltet.
-    <br>
-    Im "main.jsx" wird ales zusammen gefügt und dan ans "index.html geschickt" mit Root
-    <br>
-    Das "index.css" ist für das Globale Styling wärend das "basicnode.css" nur für das Node System verantwortlich ist
+- [Voraussetzungen](#voraussetzungen)
+- [Installation](#installation)
+- [App starten](#app-starten)
+- [Verwendung](#verwendung)
+- [Import und Export](#import-und-export)
+- [Projektstruktur](#projektstruktur)
+- [Geplante Updates](#geplante-updates)
+- [Links](#links)
 
-        
-Wie?
-    Es wird empfohlen der Packitmanager *npm* installiert sein um dan damit eine LocalHost zu starten (geht auch mit pnpm)
+## Voraussetzungen
 
-    npm install
+- [Node.js](https://nodejs.org/en/download) (LTS-Version)
+- [pnpm](https://pnpm.io/installation) (empfohlen, das Projekt enthält eine `pnpm-lock.yaml`)
+- Alternativ [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), das bei der Installation von Node.js automatisch dabei ist
+- Für Option 1 zusätzlich [Git](https://git-scm.com/)
 
-Beachte das man mit npm auch noch Node.js braucht.
-<br>
-    https://nodejs.org/en/download
+pnpm installierst du mit:
 
-Installation Guide von npm
-<br>
-    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+```bash
+npm install -g pnpm
+```
 
-LocalHost:
-    Um einen LocalHost zu Starten mit npm wird folgender Command empfohlen
+## Installation
 
-    npm run dev
+Es gibt zwei Möglichkeiten, das Projekt herunterzuladen.
 
-<br>
- Für mehr Infos und Debug fragen, gehe zu folgenden Seiten
-<br>
-    https://www.npmjs.com/
-<br>
-    https://github.com/npm
+### Option 1: Mit Git klonen
 
+```bash
+git clone https://github.com/OrangeJuicy69/DarkPurpleNote.git
+cd DarkPurpleNote
+pnpm install
+```
 
+Aktuelle Änderungen holst du später mit:
 
-Import/Export Funktion
-<br>
-Im Projekt kann man "Export JSON" drücken um das aktuele Json runter zu laden(enthält eine Kopie von JSON das im Projekt ist). 
-<br>
-Für ein Temopräses benutzung kann man JSON Importieren. (zu beachten ist das nur JSON hochgeladen werden können die die Anforderungen Entsprechen für ein volles Node)
+```bash
+git pull
+pnpm install
+```
 
-WICHTIG: Wenn du keine Änderungen siehst nachdem Importieren, kann man in der Web Konsole den fehler nachschauen
+### Option 2: Als ZIP herunterladen (ohne Git)
 
-Links:
-<br>
-    https://github.com/OrangeJuicy69
-<br>
-    https://github.com/OrangeJuicy69/DarkPurpleNote/
+**Schritt 1:** Öffne die [Startseite des Repositories](https://github.com/OrangeJuicy69/DarkPurpleNote) und klicke auf den grünen Button:
+
+![Code](https://img.shields.io/badge/Schritt_1-Code_klicken-2ea44f?style=for-the-badge)
+
+**Schritt 2:** Wähle im Menü den Eintrag **Download ZIP**.
+
+![ZIP](https://img.shields.io/badge/Schritt_2-Download_ZIP-8b5cf6?style=for-the-badge)
+
+**Schritt 3:** Entpacke die Datei `DarkPurpleNote-main.zip` per Rechtsklick auf **Hier entpacken**.
+
+![Entpacken](https://img.shields.io/badge/Schritt_3-Entpacken-8b5cf6?style=for-the-badge)
+
+**Schritt 4:** Öffne den entpackten Ordner, klicke mit der rechten Maustaste in den leeren Bereich und wähle **Im Terminal öffnen**.
+
+![Terminal](https://img.shields.io/badge/Schritt_4-Terminal_öffnen-8b5cf6?style=for-the-badge)
+
+**Schritt 5:** Installiere die Abhängigkeiten:
+
+![Installieren](https://img.shields.io/badge/Schritt_5-Installieren-8b5cf6?style=for-the-badge)
+
+```bash
+pnpm install
+```
+
+> [!NOTE]
+> Bei Option 2 gibt es keine automatischen Updates. Für eine neue Version musst du die ZIP-Datei erneut herunterladen.
+
+### Installation mit npm (Alternative)
+
+Wenn du npm statt pnpm verwendest, ersetze `pnpm install` durch:
+
+```bash
+npm install
+```
+
+## App starten
+
+Starte den lokalen Entwicklungsserver mit:
+
+```bash
+pnpm dev
+```
+
+Mit npm lautet der Befehl `npm run dev`.
+
+Die App ist danach im Browser unter der in der Konsole angezeigten Adresse erreichbar (standardmäßig `http://localhost:5173`).
+
+## Verwendung
+
+Alle Daten der Nodes stehen in der Datei `src/data/data.json`.
+
+- Alle Texte, die in einem Node angezeigt werden, stehen ebenfalls in dieser Datei.
+- Für einen neuen Node fügst du in der `data.json` einen neuen Abschnitt hinzu.
+- Position, Voraussetzungen und Status trägst du manuell in der `data.json` ein.
+
+Den genauen Aufbau der JSON-Datei und was wohin gehört, findest du in [docs/JsonSetup.md](docs/JsonSetup.md).
+
+## Import und Export
+
+- **Export:** Mit dem Button **Export JSON** lädst du das aktuelle JSON herunter. Die Datei enthält eine Kopie der Daten, die im Projekt verwendet werden.
+- **Import:** Mit dem Import kannst du ein JSON vorübergehend laden. Es werden nur JSON-Dateien akzeptiert, die den Anforderungen für einen vollständigen Node entsprechen (siehe [docs/JsonSetup.md](docs/JsonSetup.md)).
+
+> [!TIP]
+> Wenn nach dem Import keine Änderungen sichtbar sind, öffne die Browser-Konsole (Taste `F12`) und prüfe dort die Fehlermeldung.
+
+## Projektstruktur
+
+```text
+DarkPurpleNote/
+├── docs/
+│   └── JsonSetup.md        # Aufbau des JSON und was wohin gehört
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── src/
+│   ├── components/
+│   │   ├── Node.jsx        # Funktionen der Nodes
+│   │   ├── NewNode.jsx     # Neue Nodes hinzufügen (experimentell)
+│   │   ├── Connections.jsx # Verbindungslinien zwischen den Nodes
+│   │   ├── SidePanel.jsx   # Seitenpanel der Nodes
+│   │   ├── ExportJson.jsx  # Export der Nodes als JSON
+│   │   └── ImportJson.jsx  # Import der Nodes aus JSON
+│   ├── data/
+│   │   └── data.json       # Werte der Nodes
+│   ├── styles/
+│   │   ├── index.css       # Globales Styling
+│   │   └── basicnode.css   # Styling des Node-Systems
+│   └── main.jsx            # Fügt alle Komponenten zusammen und rendert sie in #root
+├── .gitignore
+├── eslint.config.js
+├── index.html              # Einstiegsseite der Webapp
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+└── vite.config.js
+```
+
+## Geplante Updates
+
+- [x] Export-Funktion
+- [x] Import-Funktion
+- [ ] Neue Node-UI
+- [ ] Neue Verbindungslinien
+- [ ] Allgemeine UI der Webapp
+
+## Links
+
+- [OrangeJuicy69 auf GitHub](https://github.com/OrangeJuicy69)
+- [Projekt-Repository](https://github.com/OrangeJuicy69/DarkPurpleNote/)
+- [pnpm: Installation](https://pnpm.io/installation) und [pnpm: FAQ](https://pnpm.io/faq)
+- [npm: Webseite](https://www.npmjs.com/) und [npm: Dokumentation](https://docs.npmjs.com/)
+- [npm auf GitHub](https://github.com/npm)
