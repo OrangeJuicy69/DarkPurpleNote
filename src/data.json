@@ -1,7 +1,7 @@
 [
   {
     "id": "n1",
-    "title": "Platzhalter Node 1",
+    "title": "Projekt XY",
     "kategorie": "coding",
     "stufe": 1,
     "shortver":"Platzhalter123",
@@ -18,7 +18,7 @@
   },
   {
     "id": "n2",
-    "title": "Platzhalter Node 2",
+    "title": "Projekt XY",
     "kategorie": "coding",
     "stufe": 2,
     "shortver":"Platzhalter123",
@@ -34,66 +34,5 @@
     "anschluss": [
       { "zu": "n1", "meineSeite": 1, "andereSeite": 2 }
     ]
-  },
-  {
-    "id": "n3",
-    "title": "Platzhalter Node 3",
-    "kategorie": "coding",
-    "stufe": 2,
-    "shortver":"Platzhalter123",
-    "voraussetzungen": ["n1"],
-    "ziel": "Platzhaltertext für Ziel.",
-    "deliverable": "Platzhaltertext für Deliverable.",
-    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
-    "nachweis": { "commit": "", "datum": "" },
-    "status": "in Arbeit",
-    "reflexion": "Platzhaltertext für Reflexion.",
-    "bildungsplan": "c",
-    "position": { "x": 85, "y": 500 },
-    "anschluss": [
-      { "zu": "n1", "meineSeite": 3, "andereSeite": 4 }
-    ]
-  },
-  {
-    "id": "n4",
-    "title": "Platzhalter Node 4",
-    "kategorie": "coding",
-    "stufe": 3,
-    "shortver":"Platzhalter123",
-    "voraussetzungen": ["n2", "n3"],
-    "ziel": "Platzhaltertext für Ziel.",
-    "deliverable": "Platzhaltertext für Deliverable.",
-    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
-    "nachweis": { "commit": "", "datum": "" },
-    "status": "gesperrt",
-    "reflexion": "",
-    "bildungsplan": "d",
-    "position": { "x": 800, "y": 350 },
-    "anschluss": [
-      { "zu": "n2", "meineSeite": 1, "andereSeite": 4 },
-      { "zu": "n3", "meineSeite": 1, "andereSeite": 2 },
-      { "zu": "n8", "meineSeite": 2, "andereSeite": 4 }
-    ]
-  },
-  {
-    "id": "n5",
-    "title": "Platzhalter Node 5",
-    "kategorie": "coding",
-    "stufe": 1,
-    "shortver":"Platzhalter123",
-    "voraussetzungen": [],
-    "ziel": "Platzhaltertext für Ziel.",
-    "deliverable": "Platzhaltertext für Deliverable.",
-    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
-    "nachweis": { "commit": "", "datum": "" },
-    "status": "abgenommen",
-    "reflexion": "Platzhaltertext für Reflexion.",
-    "bildungsplan": "e",
-    "position": { "x": 800, "y": 100 },
-    "anschluss": [
-      { "zu": "n2", "meineSeite": 1, "andereSeite": 2 }
-    ]
   }
-
-  
-]
+ ]

@@ -2,30 +2,30 @@ import { useState, useRef, useEffect } from 'react'
 import './basicnode.css'
 
 const statusColors = {
-  gesperrt: '#A32D2D',
-  offen: '#BA7517',
-  'in Arbeit': '#1727ba',
-  abgenommen: '#1D9E75',
+    gesperrt: '#A32D2D',
+    offen: '#E97132',
+    'in Arbeit': '#1727ba',
+    abgenommen: '#1D9E75',
 };
 const categoryIcons = {
-  coding: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-      <path d="M8 4L2 12l6 8M16 4l6 8-6 8" />
-    </svg>
-  ),
-  ui: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <path d="M3 9h18" />
-    </svg>
-  ),
-  server: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-      <rect x="4" y="3" width="16" height="6" rx="1" />
-      <rect x="4" y="15" width="16" height="6" rx="1" />
-      <path d="M8 6h.01M8 18h.01" />
-    </svg>
-  ),
+    coding: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M8 4L2 12l6 8M16 4l6 8-6 8" />
+        </svg>
+    ),
+    ui: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <path d="M3 9h18" />
+        </svg>
+    ),
+    server: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <rect x="4" y="3" width="16" height="6" rx="1" />
+            <rect x="4" y="15" width="16" height="6" rx="1" />
+            <path d="M8 6h.01M8 18h.01" />
+        </svg>
+    ),
 };
 const DRAG_THRESHOLD = 4;
 
@@ -96,7 +96,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
         onSelect(data.id);
     };
 
-    const handleChevronClick = (e) => {
+    const handleToggleClick = (e) => {
         e.stopPropagation();
         if (data.status === 'gesperrt') return;
         setIsOpen(!isOpen);
@@ -106,84 +106,109 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
         <div
             ref={nodeRef}
             className={`node-div${isOpen ? ' open' : ''}${isDragging ? ' dragging' : ''}${isSelected ? ' selected' : ''}${data.status === 'gesperrt' ? ' locked' : ''}`}
-            style={{ left: position.x, top: position.y }}
+            style={{
+                left: position.x,
+                top: position.y,
+                '--status-color': statusColors[data.status],
+            }}
             onPointerDown={handlePointerDown}
             onClick={handleBodyClick}
         >
-            <div className="node-pad">
-                <span className="node-icon">{categoryIcons[data.kategorie]}</span>
-                <span>{data.title}</span>
-                <div className="node-status-dot" style={{ backgroundColor: statusColors[data.status] }} />
-                <svg
-                    className={`node-chevron${isOpen ? ' open' : ''}`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    onClick={handleChevronClick}
-                >
-                    <path d="M6 9l6 6 6-6" />
-                </svg>
-            </div>
+            <div className="node-shell">
+                <div className="node-frame">
 
-            {!isOpen && (
-                <div className="node-basic">
-                    <div className='node-bs'>{data.shortver}</div>
-                    <div className="node-stufe-badge">Stufe {data.stufe}</div>
-                </div>
-            )}
+                    
+                    <div className="node-header">
+                        <span className="node-status-pill">{data.status}</span>
+                        <span className="node-title">{data.title}</span>
+                    </div>
 
-            <div className={`node-detail-wrapper${isOpen ? ' open' : ''}`}>
-                <div className="node-detail-inner">
-                    <div className="node-detail">
-                        <div className="node-row">
-                            <span className="node-label">Stufe</span>
-                            <div className="node-value">{data.stufe}</div>
+                    <div className="node-body">
+                        
+                        <div className="node-side">
+                            <span className="node-icon">{categoryIcons[data.kategorie]}</span>
                         </div>
-                        <div className="node-row">
-                            <span className="node-label">Voraussetzungen</span>
-                            <ul className="node-value">
-                                {data.voraussetzungen.map((id) => (
-                                    <li key={id}>{id}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Ziel</span>
-                            <div className="node-value">{data.ziel}</div>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Deliverable</span>
-                            <div className="node-value">{data.deliverable}</div>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Abnahme</span>
-                            <ul className="node-value">
-                                {data.abnahme.map((kriterium, i) => (
-                                    <li key={i}>{kriterium}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Nachweis</span>
-                            <div className="node-value">
-                                {data.nachweis.datum}
-                                {data.nachweis.commit && <> — <a href={data.nachweis.commit} target="_blank" rel="noreferrer">Commit</a></>}
+
+                        {/* Hauptpanel */}
+                        <div className="node-main-border">
+                            <div className="node-main">
+                                <div className="node-main-content">
+                                    {!isOpen && <div className="node-bs">{data.shortver}</div>}
+
+                                    <div className={`node-detail-wrapper${isOpen ? ' open' : ''}`}>
+                                        <div className="node-detail-inner">
+                                            <div className="node-detail">
+                                                <div className="node-row">
+                                                    <span className="node-label">Stufe</span>
+                                                    <div className="node-value">{data.stufe}</div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Voraussetzungen</span>
+                                                    <ul className="node-value">
+                                                        {data.voraussetzungen.map((id) => (
+                                                            <li key={id}>{id}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Ziel</span>
+                                                    <div className="node-value">{data.ziel}</div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Deliverable</span>
+                                                    <div className="node-value">{data.deliverable}</div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Abnahme</span>
+                                                    <ul className="node-value">
+                                                        {data.abnahme.map((kriterium, i) => (
+                                                            <li key={i}>{kriterium}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Nachweis</span>
+                                                    <div className="node-value">
+                                                        {data.nachweis.datum}
+                                                        {data.nachweis.commit && <> — <a href={data.nachweis.commit} target="_blank" rel="noreferrer">Commit</a></>}
+                                                    </div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Status</span>
+                                                    <div className="node-value">{data.status}</div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Reflexion</span>
+                                                    <div className="node-value">{data.reflexion}</div>
+                                                </div>
+                                                <div className="node-row">
+                                                    <span className="node-label">Bildungsplan</span>
+                                                    <div className="node-value">{data.bildungsplan}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div className="node-main-footer">
+                                    <div className="node-stufe-badge">
+                                        <span>Stufe {data.stufe}</span>
+                                    </div>
+                                    <svg
+                                        className={`node-toggle${isOpen ? ' open' : ''}`}
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        onClick={handleToggleClick}
+                                    >
+                                        <path className="toggle-outline" d="M12 6v12M6 12h12" />
+                                        <path className="toggle-fill" d="M12 6v12M6 12h12" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div className="node-row">
-                            <span className="node-label">Status</span>
-                            <div className="node-value">{data.status}</div>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Reflexion</span>
-                            <div className="node-value">{data.reflexion}</div>
-                        </div>
-                        <div className="node-row">
-                            <span className="node-label">Bildungsplan</span>
-                            <div className="node-value">{data.bildungsplan}</div>
-                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

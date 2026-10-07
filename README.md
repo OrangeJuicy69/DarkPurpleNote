@@ -3,7 +3,7 @@
 Entwickelt von [OrangeJuicy69](https://github.com/OrangeJuicy69)
 
 Eine eigene Notiz-App, um die Erfolge eines abgeschlossenen Projekts zu dokumentieren. Die Notizen werden als Nodes (Knoten) dargestellt, die über Linien miteinander verbunden sind.
-
+![Screenshot von der aktuellen Node UI](/public/node_ui.png)
 > [!NOTE]
 > Diese Webapp ist noch in Bearbeitung. Fehler und Bugs sind zu erwarten.
 
