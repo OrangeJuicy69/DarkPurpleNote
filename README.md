@@ -139,19 +139,19 @@ DarkPurpleNote/
 
 ## Idden für die Zukunft
 
-- [] Checkiste/To-Do Liste
-- [] Hyperlinks in Node
-- [] Sidepanle neu aufbauen von Grund
-- [] Dark Mode/ Light Mode
-- [] Unterschiednliche Nodes
-- [] Eigende Ui Farbe Wählen
-- [] Backend 
-- [] Kategorisieren
-- [] Dateinen anhängen in Nodes
-- [] Workspace
-- [] Nodes Grössen Verändern
-- [] Rein raus Zoomen im Workspace
-- [] Login 
+- [ ] Checkiste/To-Do Liste
+- [ ] Hyperlinks in Node
+- [ ] Sidepanle neu aufbauen von Grund
+- [ ] Dark Mode/ Light Mode
+- [ ] Unterschiednliche Nodes
+- [ ] Eigende Ui Farbe Wählen
+- [ ] Backend 
+- [ ] Kategorisieren
+- [ ] Dateinen anhängen in Nodes
+- [ ] Workspace
+- [ ] Nodes Grössen Verändern
+- [ ] Rein raus Zoomen im Workspace
+- [ ] Login 
 
 ## Links
 
