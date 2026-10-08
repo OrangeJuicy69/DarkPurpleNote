@@ -42,10 +42,6 @@ npm install -g pnpm
 
 ## Installation
 
-Es gibt zwei Möglichkeiten, das Projekt herunterzuladen.
-
-### Option 1: Mit Git klonen
-
 ```bash
 git clone https://github.com/OrangeJuicy69/DarkPurpleNote.git
 cd DarkPurpleNote
@@ -59,34 +55,9 @@ git pull
 pnpm install
 ```
 
-### Option 2: Als ZIP herunterladen (ohne Git)
-
-**Schritt 1:** Öffne die [Startseite des Repositories](https://github.com/OrangeJuicy69/DarkPurpleNote) und klicke auf den grünen Button:
-
-![Code](https://img.shields.io/badge/Schritt_1-Code_klicken-2ea44f?style=for-the-badge)
-
-**Schritt 2:** Wähle im Menü den Eintrag **Download ZIP**.
-
-![ZIP](https://img.shields.io/badge/Schritt_2-Download_ZIP-8b5cf6?style=for-the-badge)
-
-**Schritt 3:** Entpacke die Datei `DarkPurpleNote-main.zip` per Rechtsklick auf **Hier entpacken**.
-
-![Entpacken](https://img.shields.io/badge/Schritt_3-Entpacken-8b5cf6?style=for-the-badge)
-
-**Schritt 4:** Öffne den entpackten Ordner, klicke mit der rechten Maustaste in den leeren Bereich und wähle **Im Terminal öffnen**.
-
-![Terminal](https://img.shields.io/badge/Schritt_4-Terminal_öffnen-8b5cf6?style=for-the-badge)
-
-**Schritt 5:** Installiere die Abhängigkeiten:
-
-![Installieren](https://img.shields.io/badge/Schritt_5-Installieren-8b5cf6?style=for-the-badge)
-
 ```bash
 pnpm install
 ```
-
-> [!NOTE]
-> Bei Option 2 gibt es keine automatischen Updates. Für eine neue Version musst du die ZIP-Datei erneut herunterladen.
 
 ### Installation mit npm (Alternative)
 
@@ -162,7 +133,7 @@ DarkPurpleNote/
 
 - [x] Export-Funktion
 - [x] Import-Funktion
-- [ ] Neue Node-UI
+- [x] Neue Node-UI
 - [ ] Neue Verbindungslinien
 - [ ] Allgemeine UI der Webapp
 
