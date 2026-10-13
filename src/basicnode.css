@@ -261,7 +261,25 @@ ul.node-value {
 
 .node-div.selected {
   filter: drop-shadow(0 0 5px #e97132) drop-shadow(0 0 5px #ff5900);
+  transform: translateX(-1px) translateY(-1px);
+  animation: node-select 0.4s ease-out;
 }
+
+@keyframes node-select {
+  0% {
+    filter: drop-shadow(0 0 0 #e97132) drop-shadow(0 0 0 #ff5900);
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #e97132) drop-shadow(0 0 12px #ff5900);
+    transform: translateX(-1px) translateY(-1px) scale(1.05);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #e97132) drop-shadow(0 0 5px #ff5900);
+    transform: translateX(-1px) translateY(-1px) scale(1);
+  }
+}
+
 
 .node-div.locked {
   opacity: 0.85;
@@ -366,6 +384,7 @@ li {
   height: 2px;
   background-color: #12544F;
   transform-origin: left center;
+
 }
 
 .new-node-container {

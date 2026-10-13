@@ -63,15 +63,27 @@ export const Connections = ({ nodes, sizes }) => {
             const d = `M ${start.x},${start.y} C ${c1.x},${c1.y} ${c2.x},${c2.y} ${end.x},${end.y}`
 
             paths.push(
-                <path
-                    key={`${node.id}-${verbindung.zu}-${i}`}
-                    className="connection-path"
-                    d={d}
-                    fill="none"
-                    stroke="#b1b1b7"
-                    strokeWidth={2}
-                />
-            )
+    <g key={`${node.id}-${verbindung.zu}-${i}`} className="connection-path">
+        
+        <path
+            d={d}
+            fill="none"
+            stroke="#000"
+            strokeWidth={4}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        
+        <path
+            d={d}
+            fill="none"
+            stroke="#ff9100"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </g>
+)
         })
     })
 
