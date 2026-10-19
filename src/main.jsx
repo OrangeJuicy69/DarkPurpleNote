@@ -47,7 +47,7 @@ const App = () => {
         />
       ))}
       <NewNode />
-      <ExportJSON />
+      
       <ExportJSON nodeList={nodeList} />
       <Sidepanel node={selectedNode} onClose={() => setSelectedId(null)} />
 
