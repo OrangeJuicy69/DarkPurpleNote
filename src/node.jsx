@@ -3,9 +3,9 @@ import './basicnode.css'
 
 const statusColors = {
     gesperrt: '#A32D2D',
-    offen: '#E97132',
+    offen: '#1f7c03',
     'in Arbeit': '#1727ba',
-    abgenommen: '#1D9E75',
+    abgenommen: '#E97132',
 };
 const categoryIcons = {
     coding: (

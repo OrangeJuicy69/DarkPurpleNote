@@ -1,38 +1,197 @@
 [
   {
-    "id": "n1",
-    "title": "Projekt XY",
+    "id": "s0-skilltree",
+    "title": "Skilltree",
     "kategorie": "coding",
-    "stufe": 1,
-    "shortver":"Platzhalter123",
+    "stufe": 0,
+    "shortver": "Skilltree Planung und Ausführung",
     "voraussetzungen": [],
-    "ziel": "Platzhaltertext für Ziel.",
-    "deliverable": "Platzhaltertext für Deliverable.",
-    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "ziel": "Basic der Node-App (Skilltree) sind fertig",
+    "deliverable": "Die Basic Node-App geht, Export, Import Button geht sowie auch Infos Auslessen usw",
+    "abnahme": [],
     "nachweis": { "commit": "", "datum": "" },
-    "status": "abgenommen",
-    "reflexion": "Platzhaltertext für Reflexion.",
-    "bildungsplan": "a",
-    "position": { "x": 80, "y": 100 },
+    "status": "in Arbeit",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 1000, "y": 10 },
     "anschluss": []
   },
   {
-    "id": "n2",
-    "title": "Projekt XY",
+    "id": "s1-rpg",
+    "title": "Konsolen-RPG in TypeScript",
     "kategorie": "coding",
-    "stufe": 2,
-    "shortver":"Platzhalter123",
-    "voraussetzungen": ["n1"],
-    "ziel": "Platzhaltertext für Ziel.",
-    "deliverable": "Platzhaltertext für Deliverable.",
-    "abnahme": ["Platzhalter Kriterium 1", "Platzhalter Kriterium 2"],
+    "stufe": 1,
+    "shortver": "Kleines Basic RPG Konsolen spiel in TypeScript",
+    "voraussetzungen": ["s0-skilltree"],
+    "ziel": "Ein Game in der Konsole ",
+    "deliverable": "Ein Kleines RPG-Spiel in der Konsole mit TypeScript",
+    "abnahme": [],
     "nachweis": { "commit": "", "datum": "" },
     "status": "offen",
     "reflexion": "",
-    "bildungsplan": "b",
-    "position": { "x": 350, "y": 100 },
+    "bildungsplan": "",
+    "position": { "x": 50, "y": 10 },
     "anschluss": [
-      { "zu": "n1", "meineSeite": 1, "andereSeite": 2 }
+  { "zu": "s0-skilltree", "meineSeite": 2, "andereSeite": 1 }
+]
+  
+      
+  },
+  {
+    "id": "s1-http",
+    "title": "HTTP-Server ohne Framework",
+    "kategorie": "server",
+    "stufe": 1,
+    "shortver": "Build a Simple HTTP Server with Java ",
+    "voraussetzungen": ["s0-skilltree"],
+    "ziel": "HTTP-Server",
+    "deliverable": "Ein Laufender Server den ich vorzeigen kann um die basics einens HTTPS Server zu zeigen",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "offen",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 1000, "y": 250 },
+    "anschluss": [
+  { "zu": "s0-skilltree", "meineSeite": 3, "andereSeite": 4 }
+]
+  },
+  {
+    "id": "s2-notizen-db",
+    "title": "Notiz-Kern mit SQLite",
+    "kategorie": "coding",
+    "stufe": 2,
+    "shortver": "Notiz-Kern mit SQLite",
+    "voraussetzungen": ["s1-rpg"],
+    "ziel": "SQLite in WebApp verbinden",
+    "deliverable": "Meine WebApp mit SQLite Verbinden und Aufbauen so das ich einen LocalStorage habe",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 530, "y": 250 },
+    "anschluss": [
+  { "zu": "s0-skilltree", "meineSeite": 3, "andereSeite": 4 }
+]
+  },
+  {
+    "id": "s3-api",
+    "title": "REST-API für die Notizen",
+    "kategorie": "coding",
+    "stufe": 3,
+    "shortver": "Rest-API um bekommt die gewünschten Daten oder eine Bestätigung zurück",
+    "voraussetzungen": ["s2-notizen-db", "s1-http"],
+    "ziel": "Funktionierende REST-API ",
+    "deliverable": "Eine REST-API für meine WebApp um Daten abzurufen und zurück zu schicken",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 50, "y": 250 },
+    "anschluss": [
+  { "zu": "s2-notizen-db", "meineSeite": 2, "andereSeite": 1 }
+]
+  },
+  {
+    "id": "s3-frontend",
+    "title": "React-Frontend an der API",
+    "kategorie": "server",
+    "stufe": 3,
+    "shortver": "API für die Node-App für ein echtes Backend",
+    "voraussetzungen": ["s3-api"],
+    "ziel": "Backend API für die App",
+    "deliverable": "Ich habe meine Locale App mit einem Backend Verbunden ohne alles nur Local zu haben",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 50, "y": 480 },
+    "anschluss": [
+  { "zu": "s3-api", "meineSeite": 3, "andereSeite": 4 }
+]
+  },
+  {
+    "id": "s3-login",
+    "title": "Login",
+    "kategorie": "coding",
+    "stufe": 3,
+    "shortver": "Login für meine Notizapp",
+    "voraussetzungen": ["s3-api"],
+    "ziel": "Login Page",
+    "deliverable": "Eine Login Page für meine App die mit einem Backend verbunden ist und Funktioniert",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "",
+    "bildungsplan": "",
+    "position": { "x": 530, "y": 480 },
+    "anschluss": [
+  { "zu": "s3-api", "meineSeite": 3, "andereSeite": 4 }
+]
+  },
+  {
+    "id": "s4-tests",
+    "title": "Tests und CI",
+    "kategorie": "server",
+    "stufe": 4,
+    "shortver": "Unit-Tests für die API schreiben und das Projekt containerisieren (Docker) ",
+    "voraussetzungen": ["s3-api"],
+    "ziel": "Unit-Tests",
+    "deliverable": "Ich habe eine funktionierende API geschrieben um das Projekt zu containersieren (Docker)",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "Ich lernt, wie man die Zuverlässigkeit einer REST-API durch automatisierte Unit-Tests absichert und sie durch Containerisierung (z. B. mit Docker) so verpackt, dass sie auf jedem System identisch läuft. Damit versteht man, wie Qualitätssicherung und Deployment zusammenspielen, um Software stabil und reproduzierbar bereitzustellen",
+    "bildungsplan": "",
+    "position": { "x": 1000, "y": 480 },
+    "anschluss": [
+  { "zu": "s3-api", "meineSeite": 3, "andereSeite": 4 }
+]
+  },
+  {
+    "id": "s4-deploy",
+    "title": "Container und Deployment",
+    "kategorie": "server",
+    "stufe": 4,
+    "shortver": "Deployment auf eigenem Server oder Cloudflare ",
+    "voraussetzungen": ["s4-tests", "s3-frontend", "s3-login"],
+    "ziel": "Eigender Server oder Cloudflare",
+    "deliverable": "Ich habe meine WebApp Auf Cloudflare gehostet oder auf einem Eigenden Server um die Seite Online zu Schalten",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "Meine WebApp hat ein richtes Backend auf einem Server bspw Cloudflare oder auf meinem eigenden Server und ist somit online zugänlich",
+    "bildungsplan": "",
+    "position": { "x": 50, "y": 700 },
+   "anschluss": [
+  { "zu": "s4-tests", "meineSeite": 2, "andereSeite": 4 },
+  { "zu": "s3-frontend", "meineSeite": 3, "andereSeite": 4 },
+  { "zu": "s3-login", "meineSeite": 2, "andereSeite": 4 }
+]
+ 
+  },
+  {
+    "id": "s5-abschluss",
+    "title": "Abschlussprojekt",
+    "kategorie": "coding",
+    "stufe": 5,
+    "shortver": "Noch offen (nicht festgelegt)",
+    "voraussetzungen": ["s4-tests", "s4-deploy"],
+    "ziel": "N/A",
+    "deliverable": "N/A",
+    "abnahme": [],
+    "nachweis": { "commit": "", "datum": "" },
+    "status": "gesperrt",
+    "reflexion": "N/A",
+    "bildungsplan": "N/A",
+    "position": { "x": 1000, "y": 700 },
+    "anschluss": [
+      { "zu": "s4-tests", "meineSeite": 3, "andereSeite": 4 },
+       { "zu": "s4-deploy", "meineSeite": 1, "andereSeite": 2 }
     ]
   }
- ]
+]
+
