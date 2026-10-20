@@ -31,14 +31,9 @@ Eine eigene Notiz-App, um die Erfolge eines abgeschlossenen Projekts zu dokument
 
 - [Node.js](https://nodejs.org/en/download) (LTS-Version)
 - [pnpm](https://pnpm.io/installation) (empfohlen, das Projekt enthält eine `pnpm-lock.yaml`)
-- Alternativ [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), das bei der Installation von Node.js automatisch dabei ist
-- Für Option 1 zusätzlich [Git](https://git-scm.com/)
+- zusätzlich [Git](https://git-scm.com/)
 
-pnpm installierst du mit:
-
-```bash
-npm install -g pnpm
-```
+pnpm installierst man mit:
 
 ## Installation
 
@@ -57,14 +52,6 @@ pnpm install
 
 ```bash
 pnpm install
-```
-
-### Installation mit npm (Alternative)
-
-Wenn du npm statt pnpm verwendest, ersetze `pnpm install` durch:
-
-```bash
-npm install
 ```
 
 ## App starten
@@ -101,24 +88,22 @@ Den genauen Aufbau der JSON-Datei und was wohin gehört, findest du in [docs/Jso
 
 ```text
 DarkPurpleNote/
-├── docs/
+├── JsonSetup/
 │   └── JsonSetup.md        # Aufbau des JSON und was wohin gehört
 ├── public/
 │   ├── favicon.svg
-│   └── icons.svg
+│   ├── icons.svg
+│   └── node_ui.png
 ├── src/
-│   ├── components/
-│   │   ├── Node.jsx        # Funktionen der Nodes
-│   │   ├── NewNode.jsx     # Neue Nodes hinzufügen (experimentell)
-│   │   ├── Connections.jsx # Verbindungslinien zwischen den Nodes
-│   │   ├── SidePanel.jsx   # Seitenpanel der Nodes
-│   │   ├── ExportJson.jsx  # Export der Nodes als JSON
-│   │   └── ImportJson.jsx  # Import der Nodes aus JSON
-│   ├── data/
-│   │   └── data.json       # Werte der Nodes
-│   ├── styles/
-│   │   ├── index.css       # Globales Styling
-│   │   └── basicnode.css   # Styling des Node-Systems
+│   ├── Node.jsx        # Funktionen der Nodes
+│   ├── NewNode.jsx     # Neue Nodes hinzufügen (experimentell)
+│   ├── Connections.jsx # Verbindungslinien zwischen den Nodes
+│   ├── SidePanel.jsx   # Seitenpanel der Nodes
+│   ├── ExportJson.jsx  # Export der Nodes als JSON
+│   ├── ImportJson.jsx  # Import der Nodes aus JSON
+│   ├── index.css       # Globales Styling
+│   ├── basicnode.css   # Styling des Node-Systems
+│   ├── data.json       # Werte der Nodes
 │   └── main.jsx            # Fügt alle Komponenten zusammen und rendert sie in #root
 ├── .gitignore
 ├── eslint.config.js
@@ -137,7 +122,7 @@ DarkPurpleNote/
 - [ ] Neue Verbindungslinien
 - [ ] Allgemeine UI der Webapp
 
-## Idden für die Zukunft
+## Ideen für die Zukunft
 
 - [ ] Checkiste/To-Do Liste
 - [ ] Hyperlinks in Node
