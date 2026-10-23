@@ -143,5 +143,3 @@ DarkPurpleNote/
 - [OrangeJuicy69 auf GitHub](https://github.com/OrangeJuicy69)
 - [Projekt-Repository](https://github.com/OrangeJuicy69/DarkPurpleNote/)
 - [pnpm: Installation](https://pnpm.io/installation) und [pnpm: FAQ](https://pnpm.io/faq)
-- [npm: Webseite](https://www.npmjs.com/) und [npm: Dokumentation](https://docs.npmjs.com/)
-- [npm auf GitHub](https://github.com/npm)

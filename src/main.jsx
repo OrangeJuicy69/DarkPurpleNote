@@ -28,7 +28,6 @@ const App = () => {
     setSizes((prev) => ({ ...prev, [id]: size }))
   }
 
-
   const handleSelect = (id) => {
     setSelectedId((prev) => (prev === id ? null : id))
   }
