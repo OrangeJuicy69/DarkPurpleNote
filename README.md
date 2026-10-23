@@ -1,4 +1,5 @@
-# DarkPurpleNote
+# DarkPurpleNote (NodePlus)
+>This app is being restructured
 
 Entwickelt von [OrangeJuicy69](https://github.com/OrangeJuicy69)
 
