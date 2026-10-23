@@ -1,5 +1,8 @@
+
 import { useState, useRef, useEffect } from 'react'
 import './basicnode.css'
+
+
 
 const statusColors = {
     gesperrt: '#A32D2D',
@@ -102,6 +105,11 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
         setIsOpen(!isOpen);
     };
 
+    /* const select = document.getElementById("selectstatus"); */
+    /* const outgo = document.getElementById("ausgabe"); */
+/* web alert works when changing the select value, but I want to change the value of the node.status when changing the select value. */
+/*I thick its bcs of the data.status is a prop and not a state, so I need to change the data.status to a state and then change the state when changing the select value. */
+
     return (
         <div
             ref={nodeRef}
@@ -117,19 +125,31 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
             <div className="node-shell">
                 <div className="node-frame">
 
-                    
+
                     <div className="node-header">
-                        <span className="node-status-pill">{data.status}</span>
+                        
+                        <select
+
+                            className="node-status-pill"
+                            style={{ '--status-color': statusColors[data.status] }}
+                            value={data.status}
+                            onChange={(e) => data.onStatusChange(id, e.target.value)}
+
+                        >
+                            <option value="offen">offen</option>
+                            <option value="in Arbeit">in Arbeit</option>
+                            <option value="abgenommen">abgenommen</option>
+                            <option value="gesperrt">gesperrt</option>
+                        </select >
                         <span className="node-title">{data.title}</span>
                     </div>
-
                     <div className="node-body">
-                        
+
                         <div className="node-side">
                             <span className="node-icon">{categoryIcons[data.kategorie]}</span>
                         </div>
 
-                        {/* Hauptpanel */}
+
                         <div className="node-main-border">
                             <div className="node-main">
                                 <div className="node-main-content">
@@ -190,7 +210,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
                                     </div>
                                 </div>
 
-                                
+
                                 <div className="node-main-footer">
                                     <div className="node-stufe-badge">
                                         <span>Stufe {data.stufe}</span>
@@ -204,6 +224,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
                                         <path className="toggle-outline" d="M12 6v12M6 12h12" />
                                         <path className="toggle-fill" d="M12 6v12M6 12h12" />
                                     </svg>
+                                    {/* <p id="outgo">Noch nichts ausgewählt.</p> (muss noch position Styling usw machen geht momentan nicht, Jsx code für diese funktion schon drin)*/}
                                 </div>
                             </div>
                         </div>
