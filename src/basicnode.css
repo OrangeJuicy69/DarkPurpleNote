@@ -21,11 +21,13 @@
 
 .node-div.open {
   width: 500px;
+  z-index: 1000;
 }
 
 .node-div.dragging {
   cursor: grabbing;
   transition: none;
+  z-index: 1000;
 }
 
 
@@ -48,7 +50,9 @@
   height: 42px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  
+  
 }
 
 .node-title {
@@ -62,22 +66,73 @@
 }
 
 .node-status-pill {
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  min-width: 80px;
+  appearance: none;
+  position: relative;
+  min-width: 60px;
   height: 28px;
+  left: 5px;
   padding: 0 12px;
   box-sizing: border-box;
   display: flex;
   border: 3px solid var(--status-dark);
-  border-radius: 14px;
+  border-radius: 12px;
   background-color: var(--status-color);
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: capitalize;
-  white-space: nowrap;
+  -webkit-appearance: none; 
+  -moz-appearance: none;    
+  appearance: none;
 }
+@supports (appearance: base-select) {
+  .node-status-pill,
+  .node-status-pill::picker(select) {
+    appearance: base-select;
+  }
+
+  .node-status-pill::picker(select) {
+    border: 1px solid var(--frame-bg);
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--status-color);
+  }
+
+    .node-status-pill option {
+      border-radius: 6px;
+      background-color: var(--status-color);
+      color: #fff;
+      
+    }
+
+  .node-status-pill option:hover {
+    background: rgba(238, 238, 255, 0.438);
+  }
+
+  .node-status-pill option:checked {
+    font-weight: 600;
+  }
+  
+}
+.node-status-pill[data-status="offen"],
+.node-status-pill option[value="offen"]      { --status-color: #1f7c03; }
+
+.node-status-pill[data-status="in Arbeit"],
+.node-status-pill option[value="in Arbeit"]  { --status-color: #1727ba; }
+
+.node-status-pill[data-status="abgenommen"],
+.node-status-pill option[value="abgenommen"] { --status-color: #E97132; }
+
+.node-status-pill[data-status="gesperrt"],
+.node-status-pill option[value="gesperrt"]   { --status-color: #A32D2D; }
+
+
+/* .node-status-pill option {
+  background-color: var(--status-color);
+  color: #fff;
+  font-size: 12px;
+  text-transform: capitalize;
+} */
+
 
 
 .node-body {
@@ -291,7 +346,7 @@ ul.node-value {
 .node-sidepanel {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 0; 
   height: 100vh;
   width: 320px;
   background-color: #e97132;
