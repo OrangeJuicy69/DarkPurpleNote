@@ -107,8 +107,8 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
 
     /* const select = document.getElementById("selectstatus"); */
     /* const outgo = document.getElementById("ausgabe"); */
-/* web alert works when changing the select value, but I want to change the value of the node.status when changing the select value. */
-/*I thick its bcs of the data.status is a prop and not a state, so I need to change the data.status to a state and then change the state when changing the select value. */
+    /* web alert works when changing the select value, but I want to change the value of the node.status when changing the select value. */
+    /*I thick its bcs of the data.status is a prop and not a state, so I need to change the data.status to a state and then change the state when changing the select value. */
 
     return (
         <div
@@ -127,7 +127,7 @@ export const Node = ({ data, isSelected, onMove, onSelect, onResize }) => {
 
 
                     <div className="node-header">
-                        
+
                         <select
 
                             className="node-status-pill"
